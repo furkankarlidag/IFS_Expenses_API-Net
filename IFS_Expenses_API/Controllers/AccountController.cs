@@ -69,10 +69,10 @@ namespace IFS_Expenses_API.Controllers
                         return Ok(new { Token = token });
                     }
                     else
-                        return BadRequest(new { Error = "token bozuk" });
+                        return BadRequest(new { Error = "token is broken" });
                 }
                 else
-                    return Unauthorized(new { error = "Unauthorized login try" });
+                    return NotFound(new { Error = dataFromApi.ErrorDescription });
             }
 
             else

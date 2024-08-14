@@ -38,9 +38,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? string.Empty))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? string.Empty)),
+            ClockSkew = TimeSpan.Zero 
         };
     });
+
 
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 
@@ -58,6 +60,8 @@ app.UseCors("AllowSpecificOrigins");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+//app.UseAuthentication();
 
 app.MapControllers();
 

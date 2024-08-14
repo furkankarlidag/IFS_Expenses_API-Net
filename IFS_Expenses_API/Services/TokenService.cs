@@ -30,7 +30,7 @@ namespace IFS_Expenses_API.Services
                 var token = new JwtSecurityToken(_jwtSettings.Issuer,
                     _jwtSettings.Audience,
                     claims,
-                    expires: DateTime.Now.AddHours(1),
+                    expires: DateTime.Now.AddMinutes(30),
                     signingCredentials: credentials
                     );
 
