@@ -25,7 +25,7 @@ public class CustomersController : ControllerBase
     public async Task<IActionResult> GetCustomers()
     {
         var accessToken = await _authService.GetBearerToken();
-        var apiUrl = "https://pame8xi-dev1.build.ifs.cloud/int/ifsapplications/projection/v1/NextFrkService.svc/Reference_Customers";
+        var apiUrl = "***";
 
         var request = new HttpRequestMessage(HttpMethod.Get, apiUrl);
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);

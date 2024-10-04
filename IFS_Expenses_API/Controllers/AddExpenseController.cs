@@ -35,7 +35,7 @@ namespace IFS_Expenses_API.Controllers
             }
 
             var accessToken = await _authService.GetBearerToken();
-            var apiUrl = "https://pame8xi-dev1.build.ifs.cloud/int/ifsapplications/projection/v1/NextFrkService.svc/CreateExpense";
+            var apiUrl = "***";
             
             _httpClient.BaseAddress = new Uri(apiUrl);
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);

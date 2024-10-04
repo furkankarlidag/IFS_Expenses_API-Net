@@ -25,7 +25,7 @@ namespace IFS_Expenses_API.Controllers
         public async Task<IActionResult> GetExpenseCodes()
         {
             var accessToken = await _authService.GetBearerToken();
-            var apiUrl = "https://pame8xi-dev1.build.ifs.cloud/int/ifsapplications/projection/v1/NextFrkService.svc/Reference_ExpenseCodes";
+            var apiUrl = "***";
 
             var request = new HttpRequestMessage(HttpMethod.Get, apiUrl);
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);

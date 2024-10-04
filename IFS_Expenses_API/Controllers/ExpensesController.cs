@@ -26,7 +26,7 @@ namespace IFS_Expenses_API.Controllers
         public async Task<IActionResult> GetExpenses(string username, int year, int period)
         {
             var accessToken = await _authService.GetBearerToken();
-            var apiUrl = $"https://pame8xi-dev1.build.ifs.cloud/int/ifsapplications/projection/v1/NextFrkService.svc/GetExpenses(PersonId='{username}',Year={year},Period={period})";
+            var apiUrl = $"(PersonId='{username}',Year={year},Period={period})";
 
             var request = new HttpRequestMessage(HttpMethod.Get, apiUrl);
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);

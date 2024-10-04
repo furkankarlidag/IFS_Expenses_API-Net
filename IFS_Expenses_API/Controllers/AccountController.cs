@@ -33,7 +33,7 @@ namespace IFS_Expenses_API.Controllers
         public async Task<IActionResult> Login (string username, string password)
         {
 
-            var apiUrl = $"https://pame8xi-dev1.build.ifs.cloud/int/ifsapplications/projection/v1/NextFrkService.svc/Login(PersonId='{username}',Password='{password}')";
+            var apiUrl = $"(PersonId='{username}',Password='{password}')";
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
